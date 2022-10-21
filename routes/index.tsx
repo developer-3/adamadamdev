@@ -15,7 +15,7 @@ export default function Home() {
         <meta charSet="utf-8" />
         <link rel="icon" href="http://adamadam.dev/favicon.ico?v=2" />
       </Head>
-      <body class="flex flex-col">
+      <body class="flex flex-col relative pb-16">
         <AboutPage />
         <Footer />
       </body>
@@ -25,13 +25,13 @@ export default function Home() {
 
 function AboutPage() {
   return (
-    <div class="flex flex-col justify-center w-1/2 mx-auto mt-48">
+    <div class="flex flex-col justify-center w-[75%] md:w-1/2 mx-auto mt-[10%]">
       <div class="flex flex-row gap-4">
-        <p class="text-8xl">👋</p>
+        <p class="text-6xl md:text-8xl">👋</p>
         <div class="flex flex-col justify-center">
-          <p class="text-4xl">Hi, I'm</p>
-          <p class="text-6xl font-semibold">Adam Anderson</p>
-          <p class="mt-10 text-xl">
+          <p class="text-2xl">Hi, I'm</p>
+          <p class="text-4xl md:text-6xl font-semibold">Adam Anderson</p>
+          <p class="mt-10 text-lg">
             I'm a 4th year Computer Science student at Michigan State
             University, graduating in spring 2023. I work on the{" "}
             <a
@@ -51,7 +51,7 @@ function AboutPage() {
             </a>
             .
           </p>
-          <p class="mt-10 text-xl">
+          <p class="mt-10 text-lg">
             Shoot me a message on{" "}
             <a
               href="https://www.linkedin.com/in/adam-anderson-545472192/"
@@ -69,7 +69,7 @@ function AboutPage() {
 
 function Footer() {
   return (
-    <div class="flex justify-center items-center mt-48 h-10 bg-gradient-to-r from-sky-600 to-green-500">
+    <div class="fixed flex justify-center items-center h-10 bg-gradient-to-r from-sky-600 to-green-500 w-full bottom-0">
       <span class="flex flex-row gap-3 bg-white h-full px-4">
         <a href="https://www.github.com/developer-3">
           <img
