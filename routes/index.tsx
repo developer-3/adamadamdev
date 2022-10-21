@@ -1,45 +1,93 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
-import { Fragment, h } from "preact";
-import { tw } from "@twind";
+import { Head } from "$fresh/runtime.ts";
+
+const TITLE = "adam anderson";
+const DESCRIPTION = "adam anderson's personal portfolio and dev website.";
 
 export default function Home() {
   return (
     <>
-      <div class={tw`flex flex-col min-h-screen`}>
-        <Hero />
-        <div class={tw`flex-1`}>
-          <Construction />
-        </div>
-      </div>
+      <Head>
+        <title>{TITLE}</title>
+        <meta name="description" content={DESCRIPTION} />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:type" content="website" />
+        <meta charSet="utf-8" />
+        <link rel="icon" href="http://adamadam.dev/favicon.ico?v=2" />
+      </Head>
+      <body class="flex flex-col">
+        <AboutPage />
+        <Footer />
+      </body>
     </>
   );
 }
 
-function Hero() {
-  const container = tw
-    `w-full flex justify-center items-center flex-row gap-3`;
-
+function AboutPage() {
   return (
-    <div class={container}>
-      <img class={tw`mt-2`}
-        src="/terminal-solid.png"
-        width="30px"
-        alt="the fresh logo: a sliced lemon dripping with juice"
-      />
-      <p class={tw`my-6 text(4xl sm:4xl md:4xl)`}>
-        adam anderson
-      </p>
+    <div class="flex flex-col justify-center w-1/2 mx-auto mt-48">
+      <div class="flex flex-row gap-4">
+        <p class="text-8xl">👋</p>
+        <div class="flex flex-col justify-center">
+          <p class="text-4xl">Hi, I'm</p>
+          <p class="text-6xl font-semibold">Adam Anderson</p>
+          <p class="mt-10 text-xl">
+            I'm a 4th year Computer Science student at Michigan State
+            University, graduating in spring 2023. I work on the{" "}
+            <a
+              href="https://msuaided.com/"
+              class="text-blue-700 hover:underline hover:text-blue-500"
+            >
+              AIDED
+            </a>{" "}
+            research team. I'll be joining Amazon in fall 2023 as a full-time
+            Software Development Engineer. I like Python, TypeScript, and making
+            {" "}
+            <a
+              href="https://github.com/developer-3"
+              class="text-blue-700 hover:underline hover:text-blue-500"
+            >
+              cool things
+            </a>
+            .
+          </p>
+          <p class="mt-10 text-xl">
+            Shoot me a message on{" "}
+            <a
+              href="https://www.linkedin.com/in/adam-anderson-545472192/"
+              class="text-blue-700 hover:underline hover:text-blue-500"
+            >
+              Linkedin
+            </a>{" "}
+            if you're interested in chatting.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
 
-function Construction() {
+function Footer() {
   return (
-    <section
-      class={tw`max-w-screen-md mx-auto my-16 px(4 sm:6 md:8) space-y-4 text-center`}
-    >
-      coming soon...
-    </section>
+    <div class="flex justify-center items-center mt-48 h-10 bg-gradient-to-r from-sky-600 to-green-500">
+      <span class="flex flex-row gap-3 bg-white h-full px-4">
+        <a href="https://www.github.com/developer-3">
+          <img
+            class="mt-1"
+            src="/Github-logo.png"
+            width="30px"
+            alt="The GitHub logo"
+          />
+        </a>
+        <a href="https://www.linkedin.com/in/adam-anderson-545472192/">
+          <img
+            class="mt-1"
+            src="/linkedin-logo.png"
+            width="30px"
+            alt="The Linkedin logo"
+          />
+        </a>
+      </span>
+    </div>
   );
 }
